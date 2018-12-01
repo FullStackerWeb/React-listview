@@ -39,7 +39,7 @@
   background-color: #fff;
   border: 1px solid #e2e7ee;
   border-radius: 0.25rem;
-  object-fit: contain;
+  /* object-fit: contain;*/
   height: 3.875rem;
   width: 3.875rem;
 }

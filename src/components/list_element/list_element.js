@@ -38,43 +38,62 @@ class List_element extends Component {
                   Everybody good? Plenty of slaves for my robot colony? - InterstellarEverybody good? Plenty of slaves for my robot Everybody good? Plenty of slaves for my robot colony? - Interstellar
                 </div>
 
-                <div className="row">
-                  <span className="icon__comments cus-sucess_comments"></span>
-                  <span className="success-message d-flex">
-                    Photoshlurp_official was mentioned
-                  </span>
+                <div className="row cus-interactive_bar">
+                  <ul className="cus-special-indicators__list cus-collection-bar-ul d-flexflex-grow-1">
+                    <li className="special-indicators__item_default d-flex align-items-center mr-4">    
+                      <span className="icon__comments cus-sucess_comments mr-1"></span>
+                      <span className="success-message d-flex">Photoshlurp_official was mentioned</span>
+                    </li>
+                  </ul>
                 </div>
 
-                <div className="row">
-                  <span className="icon__social-instagram">gabriel.alexandru17</span>
-                  <span className="icon__likes ml-2">30</span>
-                  <span className="icon__comments ml-2">3</span>
-                  <span className="icon__user ml-2">120</span>
-                  <span className="icon__calendar ml-2">20-08-2017, 4:08 pm</span>
+                <div className="row cus-interactive_bar">
+                  <ul className="cus-special-indicators__list cus-collection-bar-ul d-flex flex-grow-1">
+                    <li className="special-indicators__item_default d-flex align-items-center mr-4">    
+                      <span className="icon__social-instagram mr-1"></span>
+                      <span className="font-size_caption">gabriel.alexandru17</span>
+                    </li>
+                    <li className="special-indicators__item_default d-flex align-items-center mr-4">    
+                      <span className="icon__likes mr-1"></span>
+                      <span className="font-size_caption">30</span>
+                    </li>
+                    <li className="special-indicators__item_default d-flex align-items-center mr-4">    
+                      <span className="icon__comments mr-1"></span>
+                      <span className="font-size_caption">3</span>
+                    </li>
+                    <li className="special-indicators__item_default d-flex align-items-center mr-4">    
+                      <span className="icon__user mr-1"></span>
+                      <span className="font-size_caption">120</span>
+                    </li>
+                    <li className="special-indicators__item_default d-flex align-items-center mr-4">    
+                      <span className="icon__calendar mr-1"></span>
+                      <span className="font-size_caption">20-08-2017, 4:08 pm</span>
+                    </li>
+                  </ul>
                 </div>
 
-                <div className="row font-size_caption">
-                  collections:
-                  <ul className="select2-selection__rendered">
+                <div className="row cus-interactive_bar font-size_caption">
+                  <ul className="select1-selection__rendered cus-collection-bar-ul">
+                    <li className="cus-choice_label">Collections:</li>
                     <li className="select2-selection__choice" title="Item #1" data-select2-id="6"><span className="select2-selection__choice__remove" role="presentation">×</span>B&W dresses</li>
                     <li className="select2-selection__choice" title="Item #2" data-select2-id="7"><span className="select2-selection__choice__remove" role="presentation">×</span>Umbrellas</li>
                   </ul>
                 </div>
 
-                <div className="row">
-                  <p data-tip="Assign product">
+                <div className="row cus-interactive_bar cus-button_div">
+                  <p className="cus-button-bar" data-tip="Assign product">
                     <button type="button" className="btn custom-button custom-button_outline-primary custom-button_outline-primary_hover ml-2">
                       <span className="icon__products mr-2"></span>
                       <span className="icon__plus mr-2"></span>
                     </button>
                   </p>
-                  <p data-tip="Collection">
+                  <p className="cus-button-bar" data-tip="Collection">
                     <button type="button" className="btn custom-button custom-button_outline-primary custom-button_outline-primary_hover ml-2">
                       <span className="icon__collection mr-2"></span>
                       <span className="icon__plus mr-2"></span>
                     </button>
                   </p>
-                  <p data-tip="Error">
+                  <p className="cus-button-bar" data-tip="Error">
                     <button type="button" className="btn custom-button custom-button_outline-danger custom-button_outline-danger_hover ml-2">
                       <span className="icon__error mr-2"></span>
                       Unhealthy
@@ -108,24 +127,24 @@ class List_element extends Component {
               </div>
 
             </div>
-            
+
             <div className="row cus_custom-dropdown__footer">
               <div className="cus-assign_div"></div>
-                <ul className="select2-selection__rendered cus-collection-bar-ul font-size_tiny">
+                <ul className="select2-selection__rendered cus-collaction_ul font-size_tiny">
                   <li className="cus-collection-bar-li" title="Item #1" data-select2-id="6">
-                    <img src="https://cdn1-www.cattime.com/assets/uploads/2011/12/file_2718_chartreux-460x290-460x290.jpg" className="custom-dropdown__big-image" />
+                    <img src="img/1.png" className="custom-dropdown__big-image" />
                     Dress Name1
                   </li>
                   <li className="cus-collection-bar-li" title="Item #2" data-select2-id="7">
-                    <img src="https://cdn1-www.cattime.com/assets/uploads/2011/12/file_2718_chartreux-460x290-460x290.jpg" className="custom-dropdown__big-image" />
+                    <img src="img/2.png" className="custom-dropdown__big-image" />
                     Umbrellas
                   </li>
-                  <li className="cus-collection-bar-li" title="Item #2" data-select2-id="7">
-                    <img src="https://cdn1-www.cattime.com/assets/uploads/2011/12/file_2718_chartreux-460x290-460x290.jpg" className="custom-dropdown__big-image" />
+                  <li className="cus-collection-bar-li" title="Item #3" data-select2-id="7">
+                    <img src="img/3.png" className="custom-dropdown__big-image" />
                     Longer name..
                   </li>
-                  <li className="cus-collection-bar-li" title="Item #2" data-select2-id="7">
-                    <img src="https://cdn1-www.cattime.com/assets/uploads/2011/12/file_2718_chartreux-460x290-460x290.jpg" className="custom-dropdown__big-image" />
+                  <li className="cus-collection-bar-li" title="Item #4" data-select2-id="7">
+                    <img src="img/4.png" className="custom-dropdown__big-image" />
                     Other product
                   </li>
                 </ul>

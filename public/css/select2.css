@@ -2,6 +2,10 @@
   border-color: #d0d6de !important;
 }
 
+.select1-selection__rendered {
+  padding-left: 0rem !important;
+}
+
 .select2-selection__rendered {
   padding: 3px !important;
 }
@@ -14,7 +18,8 @@
   flex-direction: row-reverse !important;
   font-size: 0.875rem !important;
   font-weight: 600 !important;
-  margin-right: 2px !important;
+  /* margin-right: 2px !important; */
+  margin-left: 15px !important;
   margin-top: 2px !important;
   padding: 0.4rem 0.875rem !important;
 }
@@ -35,6 +40,10 @@
 }
 
 .cus-collection-bar-ul{
-  margin-top: .5rem !important;
-  margin-bottom: .5rem !important;
+  margin-top: 0rem !important;
+  margin-bottom: 0rem !important;
+}
+.label
+{
+  background: transparent !important;
 }

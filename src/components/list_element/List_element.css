@@ -44,3 +44,27 @@
 .cus-tooltip_top{
     left: 37px;
 }
+.cus-interactive_bar{
+    padding-top: 0.5rem;
+}
+.cus-button-bar{
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+.cus-choice_label {
+    color: #354052 !important;
+    display: inline-flex !important;
+    flex-direction: row-reverse !important;
+    font-weight: 600 !important;
+}
+.cus-special-indicators__list {
+    padding: 0;
+}
+.cus-button_div {
+    position: absolute;
+    bottom: 0;
+}
+.cus-collaction_ul{
+    margin-top: 0.5rem !important;
+    margin-bottom: 0.5rem !important;
+}
