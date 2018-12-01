@@ -1,16 +1,8 @@
 import React, { Component } from "react";
 import ReactTooltip from 'react-tooltip'
-// import React, { Component } from 'react'
 import "./List_element.css";
 
-
-const $ = window.$;
-
 class List_element extends Component {
-  ComponentDidMount(){
-    $('[data-toggle="tooltip"]').tooltip()
-  }
-
   render() {
     return (
       <div className="content d-flex flex-column">
@@ -28,7 +20,7 @@ class List_element extends Component {
                   <input type="checkbox" className="checkbox__input"></input>
                 </div>
                 <div className="cus-img_div">
-                  <img className="cus_image" src="img/girl.png"/>
+                  <img className="cus_image" src="img/girl.png" alt="logo"/>
                 </div>
               </div>
 
@@ -99,7 +91,6 @@ class List_element extends Component {
                       Unhealthy
                     </button>
                   </p>
-                  <ReactTooltip />
                 </div>
               </div>
 
@@ -132,25 +123,35 @@ class List_element extends Component {
               <div className="cus-assign_div"></div>
                 <ul className="select2-selection__rendered cus-collaction_ul font-size_tiny">
                   <li className="cus-collection-bar-li" title="Item #1" data-select2-id="6">
-                    <img src="img/1.png" className="custom-dropdown__big-image" />
-                    Dress Name1
+                    <p className="cus-tool-tip" data-tip="Dress">
+                      <img src="img/1.png" className="custom-dropdown__big-image"  alt="logo" />
+                      <span className="cus-collection_span">Dress Name1</span>
+                    </p>
                   </li>
                   <li className="cus-collection-bar-li" title="Item #2" data-select2-id="7">
-                    <img src="img/2.png" className="custom-dropdown__big-image" />
-                    Umbrellas
+                    <p className="cus-tool-tip" data-tip="Umbrellas">
+                      <img src="img/2.png" className="custom-dropdown__big-image"  alt="logo" />
+                      <span className="cus-collection_span">Umbrellas</span>
+                    </p>
                   </li>
                   <li className="cus-collection-bar-li" title="Item #3" data-select2-id="7">
-                    <img src="img/3.png" className="custom-dropdown__big-image" />
-                    Longer name..
+                    <p className="cus-tool-tip" data-tip="Longer">
+                      <img src="img/3.png" className="custom-dropdown__big-image" alt="logo" />
+                      <span className="cus-collection_span">Longer name..</span>
+                    </p>
                   </li>
                   <li className="cus-collection-bar-li" title="Item #4" data-select2-id="7">
-                    <img src="img/4.png" className="custom-dropdown__big-image" />
-                    Other product
+                    <p className="cus-tool-tip" data-tip="Other">
+                      <img src="img/4.png" className="custom-dropdown__big-image" alt="logo" />
+                      <span className="cus-collection_span">Other product</span>
+                    </p>
                   </li>
                 </ul>
             </div>
           </div>
         </div>
+
+        <ReactTooltip />
       </div>
     );
   }
