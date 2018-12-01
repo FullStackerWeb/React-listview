@@ -1,6 +1,3 @@
-.checkbox {
-}
-
 .checkbox__input {
   -webkit-appearance: none;
   background: #fff;
@@ -72,3 +69,5 @@
 .checkbox__input:disabled + .checkbox__text {
   color: #b0b0b1;
 }
+
+/* Oleg custom checkbox style */

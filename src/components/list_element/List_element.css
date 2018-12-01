@@ -6,13 +6,41 @@
 .right-sidebar{
     border-left: 1px solid lightgray;
 }
-.content_tex{
-    width: 100%;
-    height: 100%;
-}
 .cus_image{
-        width: 100%;
+    width: 100%;
+}
+.cus_img_div{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
 }
 .cus_checkbox{
     text-align: center;
+    display: flex;
+    padding-left: 0px !important;
+    padding-right: 0px !important;   
+}
+.cus_function_div{
+    margin-top: -25px !important;
+    margin-bottom: -25px !important;
+    padding-right: 0px !important;
+}
+.cus-check_div{
+    width: 25%;
+}
+.cus-assign_div{
+    width: 6%;
+}
+.cus-img_div{
+    width: 60%;
+}
+.cus-sucess_comments{
+    color: #1bb934;
+}
+.cus-tooltip_btn{
+    will-change: transform;
+    top: 6.7rem;
+    left: 0px;
+}
+.cus-tooltip_top{
+    left: 37px;
 }

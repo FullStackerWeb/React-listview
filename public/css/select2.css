@@ -11,7 +11,7 @@
   border-color: #d8dbde !important;
   color: #354052 !important;
   display: inline-flex !important;
-  flex-direction: row-reverse; !important;
+  flex-direction: row-reverse !important;
   font-size: 0.875rem !important;
   font-weight: 600 !important;
   margin-right: 2px !important;
@@ -24,4 +24,17 @@
   line-height: 1.2 !important;
   margin-left: 0.5rem !important;
   margin-right: 0 !important;
+}
+
+/* Oleg custom css */
+.cus-collection-bar-li {
+  padding-right: 3.2rem;
+  color: #354052 !important;
+  display: inline-flex !important;
+  flex-direction: column !important;
+}
+
+.cus-collection-bar-ul{
+  margin-top: .5rem !important;
+  margin-bottom: .5rem !important;
 }
