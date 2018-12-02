@@ -2,6 +2,10 @@ import React, { Component } from "react";
 import ReactTooltip from 'react-tooltip'
 import AssignProducts from '../AssignProducts/AssignProducts'
 import AssignedProducts from '../AssignedProducts/AssignedProducts'
+import Collections from '../Collections/Collections'
+import AddedCollection from '../AddedCollection/AddedCollection'
+import Interactive from '../Interactive/Interactive'
+import BtnUnhealthy from '../Buttons/BtnUnhealthy/BtnUnhealthy'
 import "./List_element.css";
 
 class List_element extends Component {
@@ -10,17 +14,47 @@ class List_element extends Component {
     
     this.state = {
        assign_products_component: false,
-       assigned_products_component: false
+       assigned_products_component: false,
+       collection_component: false,
+       added_collection_item: false,
+       interactive_div: false,
+       unhealthy_state: false
     }
     this.updateState = this.updateState.bind(this);
   };
+
+  assign_addClick(){
+    this.setState(prevState => ({
+      assign_products_component: !prevState.assign_products_component,
+      assigned_products_component: !prevState.assigned_products_component
+    }));
+  }
+
+  assign_cancelClick() {
+    this.setState(prevState => ({
+      assign_products_component: !prevState.assign_products_component
+    }));
+  }
+
+  collection_addClick() {
+    this.setState(prevState => ({
+      collection_component: !prevState.collection_component,
+      added_collection_item: !prevState.added_collection_item
+    }));
+  }
+
+  collection_cancelClick() {
+    this.setState(prevState => ({
+      collection_component: !prevState.collection_component
+    }));
+  }
 
   updateState() {
     this.setState({data: 'Data updated...'})
   }
   
   render() {
-    const { assign_products_component, assigned_products_component } = this.state;
+    const { assign_products_component, assigned_products_component, collection_component } = this.state;
     return (
       <div className="content d-flex flex-column">
         <div className="row">
@@ -48,12 +82,7 @@ class List_element extends Component {
                 </div>
 
                 <div className="row cus-interactive_bar">
-                  <ul className="cus-special-indicators__list cus-collection-bar-ul d-flexflex-grow-1">
-                    <li className="special-indicators__item_default d-flex align-items-center mr-4">    
-                      <span className="icon__comments cus-sucess_comments mr-1"></span>
-                      <span className="success-message d-flex">Photoshlurp_official was mentioned</span>
-                    </li>
-                  </ul>
+                  {this.state.interactive_div ? <Interactive /> : null}
                 </div>
 
                 <div className="row cus-interactive_bar">
@@ -82,11 +111,7 @@ class List_element extends Component {
                 </div>
 
                 <div className="row cus-interactive_bar font-size_caption">
-                  <ul className="select1-selection__rendered cus-collection-bar-ul">
-                    <li className="cus-choice_label">Collections:</li>
-                    <li className="special-indicators__item_default select2-selection__choice" title="Item #1" data-select2-id="6"><span className="select2-selection__choice__remove" role="presentation">×</span>B&W dresses</li>
-                    <li className="special-indicators__item_default select2-selection__choice" title="Item #2" data-select2-id="7"><span className="select2-selection__choice__remove" role="presentation">×</span>Umbrellas</li>
-                  </ul>
+                  { this.state.added_collection_item ? <AddedCollection /> : null}
                 </div>
 
                 <div className="row cus-interactive_bar cus-button_div">
@@ -94,17 +119,15 @@ class List_element extends Component {
                     <span className="icon__products mr-1"></span>
                     <span className="icon__plus"></span>
                   </button>
-                  { assign_products_component ? <AssignProducts /> : null }
+                  { assign_products_component ? <AssignProducts addClick={() => this.assign_addClick()} cancelClick={()=>this.assign_cancelClick()} /> : null }
 
-                  <button type="button" data-tip="Collection" className="btn custom-button_small custom-button_outline-interactive ml-2">
+                  <button type="button" data-tip="Collection" onClick ={() => this.setState({ collection_component: !collection_component })} className="btn custom-button_small custom-button_outline-interactive ml-2">
                     <span className="icon__collection mr-1"></span>
                     <span className="icon__plus"></span>
                   </button>
+                  { collection_component ? <Collections addClick={() => this.collection_addClick()} cancelClick={() => this.collection_cancelClick()}/> : null }
 
-                  <button type="button"  data-tip="Assign product" className="btn cus-remove_btn custom-button_small custom-button_outline-interactive_unhealth">
-                    <span className="icon__error mr-2"></span>
-                    Unhealthy
-                  </button>
+                  { this.state.unhealthy_state ? <BtnUnhealthy /> : null}
                 </div>
               </div>
 

@@ -7,7 +7,7 @@
 .custom-dropdown__item {
   -webkit-appearance: none !important;
   font-size: 0.875rem;
-  /* padding: 0.5rem 0.75rem; */
+  padding: 0.5rem 0.75rem;
   position: relative;
   outline: none !important;
 }

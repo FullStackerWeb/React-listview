@@ -83,6 +83,10 @@
     margin-left: 4.2rem;
     margin-top: -2.2rem;
 }
+.cus-collection_bar{
+    position: absolute !important;
+    margin-top: -2.2rem;
+}
 .cus-fade_in{
     opacity:0;
 }
