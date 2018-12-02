@@ -1,7 +1,7 @@
 .custom-button {
   font-size: 0.875rem;
   line-height: 1.3125rem;
-  /*font-weight: 600;*/
+  font-weight: 600;
   box-shadow: none !important;
   outline: none !important;
   padding: 0.4375rem 1rem;
@@ -17,6 +17,7 @@
 }
 
 .custom-button_small {
+  font-weight: 600;
   padding: 0.25rem 0.71rem;
 }
 
@@ -63,10 +64,6 @@
   background-color: #fff;
   border-color: #ea7835;
   color: #f67646;
-}
-
-.custom-button_outline-primary:hover,
-.custom-button_outline-primary_hover {
 }
 
 .custom-button_outline-primary:active,
@@ -140,4 +137,22 @@
 .custom-button_success_active {
   background-color: #35a745;
   border-color: #3da64b;
+}
+
+/* Oleg custom button style */
+.custom-button_outline-interactive{
+  background-color: #fff;
+  border-color: rgba(0, 0, 0, 0.1);
+  color: #f67646;
+}
+.custom-button_outline-interactive_unhealth{
+  background-color: #fff;
+  border-color: rgba(0, 0, 0, 0.1);
+  color: #ed1c24;
+}
+.custom-button_outline-interactive:hover{
+  border-color: #f67646;
+}
+.custom-button_outline-interactive_unhealth:hover{
+  border-color: #ed1c24;
 }

@@ -47,10 +47,6 @@
 .cus-interactive_bar{
     padding-top: 0.5rem;
 }
-.cus-button-bar{
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-}
 .cus-choice_label {
     color: #354052 !important;
     display: inline-flex !important;
@@ -61,6 +57,7 @@
     padding: 0;
 }
 .cus-button_div {
+    width: 100%;
     position: absolute;
     bottom: 0;
 }
@@ -76,4 +73,16 @@
 }
 .cus-collection_span{
     padding-top: 0.3rem;
+}
+.cus-remove_btn{
+    position: absolute;
+    right: -5rem;
+}
+.cus-assign_bar{
+    position: absolute !important;
+    margin-left: 4.2rem;
+    margin-top: -2.2rem;
+}
+.cus-fade_in{
+    opacity:0;
 }

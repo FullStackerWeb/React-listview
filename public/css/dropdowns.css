@@ -73,7 +73,7 @@
 
 .custom-dropdown__scroll-container {
   overflow: auto;
-  max-height: 9.25rem;
+  max-height: 14.25rem;
 }
 
 .custom-dropdown__scroll-container::-webkit-scrollbar {

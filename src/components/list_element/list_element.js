@@ -1,9 +1,26 @@
 import React, { Component } from "react";
 import ReactTooltip from 'react-tooltip'
+import AssignProducts from '../AssignProducts/AssignProducts'
+import AssignedProducts from '../AssignedProducts/AssignedProducts'
 import "./List_element.css";
 
 class List_element extends Component {
+  constructor(props) {
+    super(props);
+    
+    this.state = {
+       assign_products_component: false,
+       assigned_products_component: false
+    }
+    this.updateState = this.updateState.bind(this);
+  };
+
+  updateState() {
+    this.setState({data: 'Data updated...'})
+  }
+  
   render() {
+    const { assign_products_component, assigned_products_component } = this.state;
     return (
       <div className="content d-flex flex-column">
         <div className="row">
@@ -20,7 +37,7 @@ class List_element extends Component {
                   <input type="checkbox" className="checkbox__input"></input>
                 </div>
                 <div className="cus-img_div">
-                  <img className="cus_image" src="img/girl.png" alt="logo"/>
+                  <img className="cus_image special-indicators__item_default " src="img/girl.png" alt="logo"/>
                 </div>
               </div>
 
@@ -67,30 +84,27 @@ class List_element extends Component {
                 <div className="row cus-interactive_bar font-size_caption">
                   <ul className="select1-selection__rendered cus-collection-bar-ul">
                     <li className="cus-choice_label">Collections:</li>
-                    <li className="select2-selection__choice" title="Item #1" data-select2-id="6"><span className="select2-selection__choice__remove" role="presentation">×</span>B&W dresses</li>
-                    <li className="select2-selection__choice" title="Item #2" data-select2-id="7"><span className="select2-selection__choice__remove" role="presentation">×</span>Umbrellas</li>
+                    <li className="special-indicators__item_default select2-selection__choice" title="Item #1" data-select2-id="6"><span className="select2-selection__choice__remove" role="presentation">×</span>B&W dresses</li>
+                    <li className="special-indicators__item_default select2-selection__choice" title="Item #2" data-select2-id="7"><span className="select2-selection__choice__remove" role="presentation">×</span>Umbrellas</li>
                   </ul>
                 </div>
 
                 <div className="row cus-interactive_bar cus-button_div">
-                  <p className="cus-button-bar" data-tip="Assign product">
-                    <button type="button" className="btn custom-button custom-button_outline-primary custom-button_outline-primary_hover ml-2">
-                      <span className="icon__products mr-2"></span>
-                      <span className="icon__plus mr-2"></span>
-                    </button>
-                  </p>
-                  <p className="cus-button-bar" data-tip="Collection">
-                    <button type="button" className="btn custom-button custom-button_outline-primary custom-button_outline-primary_hover ml-2">
-                      <span className="icon__collection mr-2"></span>
-                      <span className="icon__plus mr-2"></span>
-                    </button>
-                  </p>
-                  <p className="cus-button-bar" data-tip="Error">
-                    <button type="button" className="btn custom-button custom-button_outline-danger custom-button_outline-danger_hover ml-2">
-                      <span className="icon__error mr-2"></span>
-                      Unhealthy
-                    </button>
-                  </p>
+                  <button type="button" data-tip="Assign product" onClick ={() => this.setState({ assign_products_component: !assign_products_component })} className="btn custom-button_small custom-button_outline-interactive">
+                    <span className="icon__products mr-1"></span>
+                    <span className="icon__plus"></span>
+                  </button>
+                  { assign_products_component ? <AssignProducts /> : null }
+
+                  <button type="button" data-tip="Collection" className="btn custom-button_small custom-button_outline-interactive ml-2">
+                    <span className="icon__collection mr-1"></span>
+                    <span className="icon__plus"></span>
+                  </button>
+
+                  <button type="button"  data-tip="Assign product" className="btn cus-remove_btn custom-button_small custom-button_outline-interactive_unhealth">
+                    <span className="icon__error mr-2"></span>
+                    Unhealthy
+                  </button>
                 </div>
               </div>
 
@@ -119,35 +133,7 @@ class List_element extends Component {
 
             </div>
 
-            <div className="row cus_custom-dropdown__footer">
-              <div className="cus-assign_div"></div>
-                <ul className="select2-selection__rendered cus-collaction_ul font-size_tiny">
-                  <li className="cus-collection-bar-li" title="Item #1" data-select2-id="6">
-                    <p className="cus-tool-tip" data-tip="Dress">
-                      <img src="img/1.png" className="custom-dropdown__big-image"  alt="logo" />
-                      <span className="cus-collection_span">Dress Name1</span>
-                    </p>
-                  </li>
-                  <li className="cus-collection-bar-li" title="Item #2" data-select2-id="7">
-                    <p className="cus-tool-tip" data-tip="Umbrellas">
-                      <img src="img/2.png" className="custom-dropdown__big-image"  alt="logo" />
-                      <span className="cus-collection_span">Umbrellas</span>
-                    </p>
-                  </li>
-                  <li className="cus-collection-bar-li" title="Item #3" data-select2-id="7">
-                    <p className="cus-tool-tip" data-tip="Longer">
-                      <img src="img/3.png" className="custom-dropdown__big-image" alt="logo" />
-                      <span className="cus-collection_span">Longer name..</span>
-                    </p>
-                  </li>
-                  <li className="cus-collection-bar-li" title="Item #4" data-select2-id="7">
-                    <p className="cus-tool-tip" data-tip="Other">
-                      <img src="img/4.png" className="custom-dropdown__big-image" alt="logo" />
-                      <span className="cus-collection_span">Other product</span>
-                    </p>
-                  </li>
-                </ul>
-            </div>
+            { assigned_products_component ? <AssignedProducts /> : null} 
           </div>
         </div>
 
