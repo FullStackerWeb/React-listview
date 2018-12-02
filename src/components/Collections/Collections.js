@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import BtnCollection from "../Buttons/BtnCollection/BtnCollection";
 
 class Collections extends Component {
   constructor(){
@@ -49,9 +50,7 @@ class Collections extends Component {
 
         <div className="custom-dropdown__scroll-container">
           {this.state.collection_filters.map((collection, i) => 
-            <button type="button" className="dropdown-item custom-dropdown__item custom-dropdown__item_default" key={i}>
-              <span className="flex-grow-1">{collection.name}</span>
-            </button>
+            <BtnCollection collection={collection} key={i}/>
           )}
         </div>
         

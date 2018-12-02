@@ -1,10 +1,10 @@
 import React, { Component } from "react";
+import BtnListItem from "../Buttons/BtnListItem/BtnLIstItem"
 
 class AssignProducts extends Component {
   constructor(props) {
     super(props);
     this.state = {
-        assign_cancel: false,
         all_products:[
           {
             "id":0,
@@ -72,66 +72,50 @@ class AssignProducts extends Component {
     }
   };
 
-  // dismiss(){
-  //   this.props.cancelClick;
-  //   this.setState({assign_cancel: true});
-  // }
-
   render() {
-    if(this.state.assign_cancel){
-      return null;
-    }
-    else{
-      return(
-        <div className="dropdown-menu custom-dropdown__menu d-block position-static cus-assign_bar">
-          <div className="d-flex">
-            <div>
-              <div className="custom-dropdown__input_container custom-dropdown__input_container_wide p-1">
-                <div className="position-relative">
-                    <input type="text" className="w-100" placeholder="Type to filter product list..." />
-                    <span className="input_icon input_icon-right icon__search"></span>
-                </div>
-              </div>
-  
-              <div className="custom-dropdown__scroll-container">
-                {this.state.all_products.map((product, i) => 
-                  <button type="button" className="dropdown-item custom-dropdown__item custom-dropdown__item_default d-flex align-items-center" key={i}>
-                    <img src={product.url} className="custom-dropdown__big-image" alt="assign-sel" />
-                    <span className="flex-grow-1 ml-3">{product.name}</span>
-                  </button>
-                )}
+    return(
+      <div className="dropdown-menu custom-dropdown__menu d-block position-static cus-assign_bar">
+        <div className="d-flex">
+          <div>
+            <div className="custom-dropdown__input_container custom-dropdown__input_container_wide p-1">
+              <div className="position-relative">
+                  <input type="text" className="w-100" placeholder="Type to filter product list..." />
+                  <span className="input_icon input_icon-right icon__search"></span>
               </div>
             </div>
-  
-            <div>
-              <div className="custom-dropdown__header custom-dropdown__header_wide px-3">
-                Is it one of these?
-              </div>
-  
-              <div className="custom-dropdown__scroll-container">
-                {this.state.assigned_products.map((product, i) => 
-                  <button type="button" className="dropdown-item custom-dropdown__item custom-dropdown__item_default d-flex align-items-center" key={i}>
-                    <img src={product.url} className="custom-dropdown__big-image" alt="assign-sel" />
-                    <span className="flex-grow-1 ml-3">{product.name}</span>
-                  </button>
-                )}
-              </div>
+
+            <div className="custom-dropdown__scroll-container">
+              {this.state.all_products.map((product, i) =>
+                <BtnListItem product={product} key={i}/>
+              )}
             </div>
-  
           </div>
-  
-          <div className="custom-dropdown__footer d-flex justify-content-end">
-            <button type="button" onClick = {this.props.cancelClick} className="custom-dropdown__footer-button custom-dropdown__footer-button_default">
-                Cancel
-            </button>
-            <button type="button" onClick = {this.props.addClick} className="custom-dropdown__footer-button custom-dropdown__footer-button_action ml-3">
-                Add selected
-            </button>
+
+          <div>
+            <div className="custom-dropdown__header custom-dropdown__header_wide px-3">
+              Is it one of these?
+            </div>
+
+            <div className="custom-dropdown__scroll-container">
+              {this.state.assigned_products.map((product, i) =>
+                <BtnListItem product={product} key={i}/>
+              )}
+            </div>
           </div>
-  
+
         </div>
-      );
-    }
+
+        <div className="custom-dropdown__footer d-flex justify-content-end">
+          <button type="button" onClick = {this.props.cancelClick} className="custom-dropdown__footer-button custom-dropdown__footer-button_default">
+              Cancel
+          </button>
+          <button type="button" onClick = {this.props.addClick} className="custom-dropdown__footer-button custom-dropdown__footer-button_action ml-3">
+              Add selected
+          </button>
+        </div>
+
+      </div>
+    );
   }
 }
 

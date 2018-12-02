@@ -65,12 +65,6 @@
     margin-top: 0.5rem !important;
     margin-bottom: 0.5rem !important;
 }
-.cus-tool-tip{
-  display: inline-flex !important;
-  flex-direction: column !important;
-  margin-bottom: 0rem !important;
-  margin-top: 0rem !important;
-}
 .cus-collection_span{
     padding-top: 0.3rem;
 }
