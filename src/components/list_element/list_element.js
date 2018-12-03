@@ -1,13 +1,13 @@
 import React, { Component } from "react";
-import Collections      from '../Collections/Collections'
-import Interactive      from '../Interactive/Interactive'
-import ReactTooltip     from 'react-tooltip'
-import BtnUnhealthy     from '../Buttons/BtnUnhealthy/BtnUnhealthy'
-import AssignProducts   from '../AssignProducts/AssignProducts'
-import AddedCollection  from '../AddedCollection/AddedCollection'
-import AssignedProducts from '../AssignedProducts/AssignedProducts'
-import "./List_element.css";
+import Collections      from '../Collections/Collections';
+import Interactive      from '../Interactive/Interactive';
+import ReactTooltip     from 'react-tooltip';
+import BtnUnhealthy     from '../Buttons/BtnUnhealthy/BtnUnhealthy';
+import AssignProducts   from '../AssignProducts/AssignProducts';
+import AddedCollection  from '../AddedCollection/AddedCollection';
+import AssignedProducts from '../AssignedProducts/AssignedProducts';
 import ActionButtonGroup from "../ActionButtonGroup/ActionButtonGroup";
+import "./List_element.css";
 
 class List_element extends Component {
   constructor(props) {
@@ -25,6 +25,27 @@ class List_element extends Component {
        recommend_state: true
     }
   };
+
+  componentWillMount() {
+    document.addEventListener('mousedown', this.handleClick, false);
+  }
+
+  componentWillUnmount() {
+    document.addEventListener('mousedown', this.handleClick, false);
+  }
+
+  handleClick = (e) => {
+    if(this.node.contains(e.target)) {
+      return;
+    }
+    else{
+      this.setState({
+        assign_products_component: false,
+        collection_component: false
+      });
+    }
+    // this.handleClickOutside()
+  }
 
   assign_addClick(){
     this.setState(prevState => ({
@@ -66,7 +87,7 @@ class List_element extends Component {
             </h3>
           </div>
 
-          <div className="col-md-12">
+          <div className="col-md-10">
             <div className="row special-indicators__content content_bar">
               <div className="col-md-3 cus_checkbox">
                 <div className="cus-check_div">
@@ -132,7 +153,7 @@ class List_element extends Component {
                   }
                 </div>
 
-                <div className="row cus-interactive_bar cus-button_div">
+                <div ref={node => this.node = node} className="row cus-interactive_bar cus-button_div">
                   { assign_btn_state ? 
                     <button type="button" data-tip="Assign product" onClick ={() => this.setState({ assign_products_component: !assign_products_component })} className="btn custom-button_small custom-button_outline-interactive">
                       <span className="icon__products mr-1"></span>
@@ -142,14 +163,16 @@ class List_element extends Component {
                   }
                   { assign_products_component ? <AssignProducts addClick={() => this.assign_addClick()} cancelClick={()=>this.assign_cancelClick()} /> : null }
                   
-                  { collection_btn_state ? 
-                    <button type="button" data-tip="Collection" onClick ={() => this.setState({ collection_component: !collection_component })} className="btn custom-button_small custom-button_outline-interactive ml-2">
-                      <span className="icon__collection mr-1"></span>
-                      <span className="icon__plus"></span>
-                    </button>
-                    : null
-                  }
-                  { collection_component ? <Collections addClick={() => this.collection_addClick()} cancelClick={() => this.collection_cancelClick()}/> : null }
+                  <div>
+                    { collection_btn_state ? 
+                      <button type="button" data-tip="Collection" onClick ={() => this.setState({ collection_component: !collection_component })} className="btn custom-button_small custom-button_outline-interactive ml-2">
+                        <span className="icon__collection mr-1"></span>
+                        <span className="icon__plus"></span>
+                      </button>
+                      : null
+                    }
+                    { collection_component ? <Collections addClick={() => this.collection_addClick()} cancelClick={() => this.collection_cancelClick()}/> : null }
+                  </div>
 
                   { this.state.unhealthy_state ? <BtnUnhealthy /> : null}
                 </div>
