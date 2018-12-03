@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import ReactTooltip     from 'react-tooltip';
+import BtnAssignedItem from "../Buttons/BtnAssignedItem/BtnAssignedItem";
 
 class AssignedProducts extends Component {
   constructor(props){
     super(props);
     this.state ={
+        // select_item_state: false,
         products_list:[
           {
             id:0,
@@ -32,17 +34,23 @@ class AssignedProducts extends Component {
           }
         ]
     }
+    // this.select_assigned_item = this.select_assigned_item.bind(this);
   }
+
+  // select_assigned_item(event){
+  //   this.setState(prevState => ({
+  //     select_item_state: !prevState.select_item_state
+  //   }));
+  // }
+
   render() {
+    // const {select_item_state} = this.state;
     return(
       <div className="row cus_custom-dropdown__footer">
         <div className="cus-assign_div"></div>
         <ul className="select2-selection__rendered cus-collaction_ul font-size_tiny">
           {this.state.products_list.map((product, i) =>
-            <li className="cus-collection-bar-li special-indicators__item_default" data-select2-id={i} key={i}>
-              <img src={product.img_url} className="custom-dropdown__big-image"  alt="logo" data-tip={product.tooltip}/>
-              <span className="cus-collection_span">{product.title}</span>
-            </li>
+            <BtnAssignedItem assignedItem={product} key={i}/>
           )}
           <li className="cus-collection-bar-li special-indicators__item_default " title="Item #4" data-select2-id="7">
             <button type="button" data-tip="Assign product" className="btn custom-button_small custom-button_outline-interactive">

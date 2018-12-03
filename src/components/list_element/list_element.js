@@ -7,6 +7,7 @@ import AssignProducts   from '../AssignProducts/AssignProducts'
 import AddedCollection  from '../AddedCollection/AddedCollection'
 import AssignedProducts from '../AssignedProducts/AssignedProducts'
 import "./List_element.css";
+import ActionButtonGroup from "../ActionButtonGroup/ActionButtonGroup";
 
 class List_element extends Component {
   constructor(props) {
@@ -17,12 +18,11 @@ class List_element extends Component {
        assigned_products_component: false,
        collection_component: false,
        added_collection_item: false,
-       interactive_div: false,
-       unhealthy_state: false,
+       interactive_div: true,
+       unhealthy_state: true,
        assign_btn_state: true,
-       collection_btn_state: false
+       collection_btn_state: true
     }
-    this.updateState = this.updateState.bind(this);
   };
 
   assign_addClick(){
@@ -41,6 +41,7 @@ class List_element extends Component {
 
   collection_addClick() {
     this.setState(prevState => ({
+      collection_btn_state: !prevState.collection_btn_state,
       collection_component: !prevState.collection_component,
       added_collection_item: !prevState.added_collection_item
     }));
@@ -51,13 +52,9 @@ class List_element extends Component {
       collection_component: !prevState.collection_component
     }));
   }
-
-  updateState() {
-    this.setState({data: 'Data updated...'})
-  }
   
   render() {
-    const { assign_products_component, assigned_products_component, collection_component, assign_btn_state } = this.state;
+    const {assign_products_component, assigned_products_component, collection_component, assign_btn_state, collection_btn_state} = this.state;
     return (
       <div className="content d-flex flex-column">
         <div className="row">
@@ -75,6 +72,12 @@ class List_element extends Component {
                 </div>
                 <div className="cus-img_div">
                   <img className="cus_image special-indicators__item_default " src="img/girl.png" alt="logo"/>
+                  {/* <div className="cus-img_middle rounded">
+                    <div className="cus-img_text">Show details</div>
+                  </div> */}
+                  <div className="cus-recommend_icon">
+                    <span className="icon__star cus_star_icon"></span>
+                  </div>
                 </div>
               </div>
 
@@ -102,10 +105,10 @@ class List_element extends Component {
                       <span className="icon__comments mr-1"></span>
                       <span className="font-size_caption">3</span>
                     </li>
-                    <li className="special-indicators__item_default d-flex align-items-center mr-4">    
+                    {/* <li className="special-indicators__item_default d-flex align-items-center mr-4">    
                       <span className="icon__user mr-1"></span>
                       <span className="font-size_caption">120</span>
-                    </li>
+                    </li> */}
                     <li className="special-indicators__item_default d-flex align-items-center mr-4">    
                       <span className="icon__calendar mr-1"></span>
                       <span className="font-size_caption">20-08-2017, 4:08 pm</span>
@@ -115,6 +118,12 @@ class List_element extends Component {
 
                 <div className="row cus-interactive_bar font-size_caption">
                   { this.state.added_collection_item ? <AddedCollection /> : null}
+                  {collection_btn_state ? null
+                    : <button type="button" data-tip="Collection" onClick ={() => this.setState({ collection_component: !collection_component })} className="btn custom-button_small custom-button_outline-interactive ml-2">
+                        <span className="icon__collection mr-1"></span>
+                        <span className="icon__plus"></span>
+                      </button>
+                  }
                 </div>
 
                 <div className="row cus-interactive_bar cus-button_div">
@@ -126,11 +135,14 @@ class List_element extends Component {
                     : null
                   }
                   { assign_products_component ? <AssignProducts addClick={() => this.assign_addClick()} cancelClick={()=>this.assign_cancelClick()} /> : null }
-
-                  <button type="button" data-tip="Collection" onClick ={() => this.setState({ collection_component: !collection_component })} className="btn custom-button_small custom-button_outline-interactive ml-2">
-                    <span className="icon__collection mr-1"></span>
-                    <span className="icon__plus"></span>
-                  </button>
+                  
+                  { collection_btn_state ? 
+                    <button type="button" data-tip="Collection" onClick ={() => this.setState({ collection_component: !collection_component })} className="btn custom-button_small custom-button_outline-interactive ml-2">
+                      <span className="icon__collection mr-1"></span>
+                      <span className="icon__plus"></span>
+                    </button>
+                    : null
+                  }
                   { collection_component ? <Collections addClick={() => this.collection_addClick()} cancelClick={() => this.collection_cancelClick()}/> : null }
 
                   { this.state.unhealthy_state ? <BtnUnhealthy /> : null}
@@ -140,24 +152,7 @@ class List_element extends Component {
               <div className="col-md-1"></div>
 
               <div className="col-md-2 cus_function_div">
-                <ul className="special-indicators__list d-flex flex-column flex-grow-1">
-                  <li className="special-indicators__item special-indicators__item_active special-indicators__item_green d-flex align-items-center">
-                    <span className="icon__check-big mr-2"></span>
-                    <span>Approved</span>
-                  </li>
-                  <li className="special-indicators__item special-indicators__item_hover d-flex align-items-center">
-                    <span className="icon__cross-close mr-2"></span>
-                    <span>Reject</span>
-                  </li>
-                  <li className="special-indicators__item special-indicators__item_default d-flex align-items-center">
-                    <span className="icon__copyright mr-2"></span>
-                    <span className="text-nowrapw">Get media rights</span>
-                  </li>
-                  <li className="special-indicators__item special-indicators__item_default d-flex align-items-center">
-                    <span className="icon__pin mr-2"></span>
-                    <span className="text-nowrapw">Set sticky</span>
-                  </li>
-                </ul>
+                <ActionButtonGroup />
               </div>
 
             </div>

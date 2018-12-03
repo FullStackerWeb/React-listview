@@ -6,13 +6,6 @@
 .right-sidebar{
     border-left: 1px solid lightgray;
 }
-.cus_image{
-    width: 100%;
-}
-.cus_img_div{
-    padding-left: 0px !important;
-    padding-right: 0px !important;
-}
 .cus_checkbox{
     text-align: center;
     display: flex;
@@ -30,9 +23,43 @@
 .cus-assign_div{
     width: 6%;
 }
+/*  */
 .cus-img_div{
+    position: realtive;
     width: 60%;
 }
+.cus_image{
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+.cus-img_middle{
+    background-color: #354052;
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    width: 60%;
+    height: 100%;
+    top: 100%;
+    left: 25%;
+    transform: translate(0%, -100%);
+    -ms-transform: translate(0%, -100%);
+    text-align: center;
+}
+.cus-img_div:hover .cus-img_middle{
+    opacity: 0.8;
+}
+.cus-img_div:hover .cus_image{
+    opacity: 1;
+}
+.cus-img_text{
+    color: white;
+    margin-top: 7.5rem;
+    margin-bottom: 7.5rem;
+}
+/*  */
 .cus-sucess_comments{
     color: #1bb934;
 }
@@ -84,3 +111,23 @@
 .cus-fade_in{
     opacity:0;
 }
+.cus-close_btn{
+    position: fixed;
+    margin-left: 3rem;
+    margin-top: -0.1rem;
+}
+
+.cus-recommend_icon {
+    position: absolute;
+    top: 0;
+    width: 0; 
+    height: 0;
+    border-bottom: 40px solid transparent;
+    border-left: 40px solid #f5a308 ;
+}
+.cus_star_icon{
+    color: white;
+    margin-left: 3.5rem;
+    margin-left: -4rem;
+}
+  
