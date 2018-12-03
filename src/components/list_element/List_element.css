@@ -130,4 +130,8 @@
     color: white;
     margin-left: -3.5rem;
 }
+.cus-assigned_add_btn{
+    position: absolute;
+    bottom: 10%;
+}
   

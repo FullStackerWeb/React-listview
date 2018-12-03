@@ -53,7 +53,7 @@ class AssignedProducts extends Component {
             <BtnAssignedItem assignedItem={product} key={i}/>
           )}
           <li className="cus-collection-bar-li special-indicators__item_default " title="Item #4" data-select2-id="7">
-            <button type="button" data-tip="Assign product" className="btn custom-button_small custom-button_outline-interactive">
+            <button type="button" data-tip="Assign product" className="btn cus-assigned_add_btn custom-button_small custom-button_outline-interactive">
               <span className="icon__products mr-1"></span>
               <span className="icon__plus"></span>
             </button>
