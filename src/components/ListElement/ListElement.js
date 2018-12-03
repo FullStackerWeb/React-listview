@@ -7,9 +7,9 @@ import AssignProducts   from '../AssignProducts/AssignProducts';
 import AddedCollection  from '../AddedCollection/AddedCollection';
 import AssignedProducts from '../AssignedProducts/AssignedProducts';
 import ActionButtonGroup from "../ActionButtonGroup/ActionButtonGroup";
-import "./List_element.css";
+import "./ListElement.css";
 
-class List_element extends Component {
+class ListElement extends Component {
   constructor(props) {
     super(props);
     
@@ -196,4 +196,4 @@ class List_element extends Component {
   }
 }
 
-export default List_element;
+export default ListElement;
