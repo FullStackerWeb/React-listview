@@ -98,6 +98,7 @@
 .cus-remove_btn{
     position: absolute;
     right: -5rem;
+    bottom: 0;
 }
 .cus-assign_bar{
     position: absolute !important;

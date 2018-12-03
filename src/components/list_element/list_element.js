@@ -21,7 +21,8 @@ class List_element extends Component {
        interactive_div: true,
        unhealthy_state: true,
        assign_btn_state: true,
-       collection_btn_state: true
+       collection_btn_state: true,
+       recommend_state: true
     }
   };
 
@@ -54,15 +55,16 @@ class List_element extends Component {
   }
   
   render() {
-    const {assign_products_component, assigned_products_component, collection_component, assign_btn_state, collection_btn_state} = this.state;
+    const {assign_products_component, assigned_products_component, collection_component, assign_btn_state,
+      recommend_state, collection_btn_state} = this.state;
     return (
       <div className="content d-flex flex-column">
         <div className="row">
-          {/* <div className="col-md-2">
+          <div className="col-md-2">
             <h3 className="group-title">
               LIST VIEW - EMPTY STATE
             </h3>
-          </div> */}
+          </div>
 
           <div className="col-md-12">
             <div className="row special-indicators__content content_bar">
@@ -72,12 +74,16 @@ class List_element extends Component {
                 </div>
                 <div className="cus-img_div">
                   <img className="cus_image special-indicators__item_default " src="img/girl.png" alt="logo"/>
-                  {/* <div className="cus-img_middle rounded">
+                  <div className="cus-img_middle rounded">
                     <div className="cus-img_text">Show details</div>
-                  </div> */}
-                  <div className="cus-recommend_icon">
-                    <span className="icon__star cus_star_icon"></span>
                   </div>
+                  {/* recommend part :: recommend_state is variable for check this photo is recommending  */}
+                  {recommend_state ? 
+                    <div className="cus-recommend_icon">
+                      <span className="icon__star cus_star_icon"></span>
+                    </div>
+                    :null
+                  }
                 </div>
               </div>
 
