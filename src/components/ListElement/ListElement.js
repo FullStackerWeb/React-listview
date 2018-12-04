@@ -25,8 +25,7 @@ class ListElement extends Component {
       interactive_div: true,
       unhealthy_state: true,
       assign_btn_state: true,
-      collection_btn_state: true,
-      recommend_state: true
+      collection_btn_state: true
     }
 
     this.elected_product_items = [];
@@ -82,8 +81,7 @@ class ListElement extends Component {
   }
   
   render() {
-    const {assign_products_component, assigned_products_component, collection_component, assign_btn_state,
-      recommend_state, collection_btn_state} = this.state;
+    const {assign_products_component, assigned_products_component, collection_component, assign_btn_state, collection_btn_state} = this.state;
     return (
       <div className="content d-flex flex-column">
         <div className="row">
@@ -133,7 +131,6 @@ class ListElement extends Component {
               </div>
               <ActionButtonGroup />
             </div>
-
             { assigned_products_component && <AssignedProducts /> } 
           </div>
         </div>
