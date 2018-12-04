@@ -6,7 +6,6 @@ class AssignedProducts extends Component {
   constructor(props){
     super(props);
     this.state ={
-        // select_item_state: false,
         products_list:[
           {
             "id":0,
@@ -86,14 +85,6 @@ class AssignedProducts extends Component {
     this.selectedProducts = JSON.parse(localStorage.getItem('assignedItem'));
   }
 
-  componentWillMount() {
-    // this.tempList = this.state.products_list.filter( product => 
-    //   this.selectedProducts.includes(product.id)
-    // )
-    // console.log(this.tempList);
-    // debugger;
-  }
-
   render() {
     const {products_list} = this.state;
     return(
@@ -103,14 +94,13 @@ class AssignedProducts extends Component {
           {products_list.filter( product => this.selectedProducts.includes(product.id)).map((product, i) => 
             <BtnAssignedItem assignedItem={product} key={i}/>
           )}
-          <li className="cus-collection-bar-li special-indicators__item_default " title="Item #4" data-select2-id="7">
+          <li className="cus-collection-bar-li special-indicators__item_default" title="Item #4" data-select2-id="7">
             <button type="button" data-tip="Assign product" className="btn cus-assigned_add_btn custom-button_small custom-button_outline-interactive">
               <span className="icon__products mr-1"></span>
               <span className="icon__plus"></span>
             </button>
           </li>
         </ul>
-
         <ReactTooltip />
       </div>
     );

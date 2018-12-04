@@ -27,8 +27,6 @@ class ListElement extends Component {
       assign_btn_state: true,
       collection_btn_state: true
     }
-
-    this.elected_product_items = [];
   };
 
   componentWillMount() {
@@ -40,22 +38,20 @@ class ListElement extends Component {
   }
 
   handleClick = (e) => {
-    if(this.node.contains(e.target)) {
+    if(this.node.contains(e.target))
       return;
-    }
-    else{
+    else
       this.setState({
         assign_products_component: false,
         collection_component: false
       });
-    }
-    // this.handleClickOutside()
   }
 
   assign_addClick(){
+    if(!this.state.assigned_products_component)
+      this.setState({assign_products_component: !this.state.assign_products_component});
     this.setState(prevState => ({
       assign_btn_state: !prevState.assign_btn_state,
-      assign_products_component: !prevState.assign_products_component,
       assigned_products_component: !prevState.assigned_products_component
     }));
   }
@@ -67,10 +63,17 @@ class ListElement extends Component {
   }
 
   collection_addClick() {
+    if(!this.state.added_collection_item){
+      this.setState(
+        {
+          added_collection_item: !this.state.added_collection_item,  
+          collection_btn_state: !this.state.collection_btn_state
+        }
+      );
+    }
     this.setState(prevState => ({
-      collection_btn_state: !prevState.collection_btn_state,
       collection_component: !prevState.collection_component,
-      added_collection_item: !prevState.added_collection_item
+      // added_collection_item: !prevState.added_collection_item
     }));
   }
 
@@ -91,7 +94,7 @@ class ListElement extends Component {
             </h3>
           </div>
 
-          <div className="col-md-12">
+          <div className="col-md-10">
             <div className="row special-indicators__content content_bar">
               <PhotoSection />
               <div className="col-md-6">

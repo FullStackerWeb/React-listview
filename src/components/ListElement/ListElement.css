@@ -138,3 +138,10 @@
 .cus-photo_description{
     font-weight: normal;
 }
+.cus-normal_active_ul{
+    color: #b0b0b1;
+}
+.cus-font-size_caption{
+    font-size: 0.75rem;
+    line-height: 1.3125rem;
+}
