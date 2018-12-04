@@ -9,47 +9,98 @@ class AssignedProducts extends Component {
         // select_item_state: false,
         products_list:[
           {
-            id:0,
-            img_url: "img/1.png",
-            title: "Dress Name1",
-            tooltip:"Dress"
+            "id":0,
+            "title":"Balinese",
+            "tooltip": "Balinese",
+            "img_url":"https://cdn2-www.cattime.com/assets/uploads/2011/12/file_2734_balinese-460x290-460x290.jpg"
           },
           {
-            id:1,
-            img_url: "img/2.png",
-            title: "Umbrellas",
-            tooltip:"Umbrella"
+            "id":1,
+            "title":"Bengal",
+            "tooltip": "Balinese",
+            "img_url":"https://cdn3-www.cattime.com/assets/uploads/2011/12/file_2706_bengal-cat-breed-picture.jpg"
           },
           {
-            id:2,
-            img_url: "img/3.png",
-            title: "Longer name",
-            tooltip:"Longer"
+            "id":2,
+            "title":"Birman",
+            "tooltip": "Balinese",
+            "img_url":"https://cdn1-www.cattime.com/assets/uploads/2011/12/file_2708_birman-460x290-460x290.jpg"
           },
           {
-            id:3,
-            img_url: "img/4.png",
-            title: "Other product",
-            tooltip:"Other"
-          }
-        ]
+            "id":3,
+            "title":"Bombay",
+            "tooltip": "Balinese",
+            "img_url":"https://cdn3-www.cattime.com/assets/uploads/2011/12/file_2756_Bombay-cat-breed.jpg"
+          },
+          {
+            "id":4,
+            "title":"British Shorthair",
+            "tooltip": "Balinese",
+            "img_url":"https://cdn1-www.cattime.com/assets/uploads/2011/12/file_2744_british-shorthair-460x290-460x290.jpg"
+          },
+          {
+            "id":5,
+            "title":"Burmese",
+            "tooltip": "Balinese",
+            "img_url":"https://cdn1-www.cattime.com/assets/uploads/2011/12/file_2688_burmese-cat-breed-picture.jpg"
+          },
+          {
+            "id":6,
+            "title":"Burmilla",
+            "tooltip": "Balinese",
+            "img_url":"https://cdn1-www.cattime.com/assets/uploads/2011/12/file_2760_burmilla-460x290-460x290.jpg"
+          },
+          {
+            "id": 7,
+            "title": "Chartreux",
+            "tooltip": "Balinese",
+            "img_url": "https://cdn1-www.cattime.com/assets/uploads/2011/12/file_2718_chartreux-460x290-460x290.jpg"
+          },
+          {
+            "id": 8,
+            "title": "Chinese Li Hua",
+            "tooltip": "Balinese",
+            "img_url": "https://cdn3-www.cattime.com/assets/uploads/2011/12/file_2758_chinese-li-460x290-460x290.jpg"
+          },
+          {
+            "id": 9,
+            "title": "Colorpoint Shorthair",
+            "tooltip": "Balinese",
+            "img_url": "https://cdn2-www.cattime.com/assets/uploads/2011/12/file_2732_colorpoint-shorthair-460x290-460x290.jpg"
+          },
+          {
+            "id": 10,
+            "title": "Cornish Rex",
+            "tooltip": "Balinese",
+            "img_url": "https://cdn1-www.cattime.com/assets/uploads/2011/12/file_2696_cornish-rex-460x290-460x290.jpg"
+          },
+          {
+            "id": 11,
+            "title": "Cymric",
+            "tooltip": "Balinese",
+            "img_url": "https://cdn2-www.cattime.com/assets/uploads/2011/12/file_2690_cymrc-460x290-460x290.jpg"
+          },
+        ]        
     }
-    // this.select_assigned_item = this.select_assigned_item.bind(this);
+    this.tempList = [];
+    this.selectedProducts = JSON.parse(localStorage.getItem('assignedItem'));
   }
 
-  // select_assigned_item(event){
-  //   this.setState(prevState => ({
-  //     select_item_state: !prevState.select_item_state
-  //   }));
-  // }
+  componentWillMount() {
+    // this.tempList = this.state.products_list.filter( product => 
+    //   this.selectedProducts.includes(product.id)
+    // )
+    // console.log(this.tempList);
+    // debugger;
+  }
 
   render() {
-    // const {select_item_state} = this.state;
+    const {products_list, selectedProducts} = this.state;
     return(
       <div className="row cus_custom-dropdown__footer">
         <div className="cus-assign_div"></div>
         <ul className="select2-selection__rendered cus-collaction_ul font-size_tiny">
-          {this.state.products_list.map((product, i) =>
+          {products_list.filter( product => this.selectedProducts.includes(product.id)).map((product, i) => 
             <BtnAssignedItem assignedItem={product} key={i}/>
           )}
           <li className="cus-collection-bar-li special-indicators__item_default " title="Item #4" data-select2-id="7">

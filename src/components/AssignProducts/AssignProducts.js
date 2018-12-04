@@ -44,33 +44,47 @@ class AssignProducts extends Component {
         ],
         assigned_products:[
           {
-            "id": 0,
+            "id": 7,
             "name": "Chartreux",
             "url": "https://cdn1-www.cattime.com/assets/uploads/2011/12/file_2718_chartreux-460x290-460x290.jpg"
           },
           {
-            "id": 1,
+            "id": 8,
             "name": "Chinese Li Hua",
             "url": "https://cdn3-www.cattime.com/assets/uploads/2011/12/file_2758_chinese-li-460x290-460x290.jpg"
           },
           {
-            "id": 2,
+            "id": 9,
             "name": "Colorpoint Shorthair",
             "url": "https://cdn2-www.cattime.com/assets/uploads/2011/12/file_2732_colorpoint-shorthair-460x290-460x290.jpg"
           },
           {
-            "id": 3,
+            "id": 10,
             "name": "Cornish Rex",
             "url": "https://cdn1-www.cattime.com/assets/uploads/2011/12/file_2696_cornish-rex-460x290-460x290.jpg"
           },
           {
-            "id": 4,
+            "id": 11,
             "name": "Cymric",
             "url": "https://cdn2-www.cattime.com/assets/uploads/2011/12/file_2690_cymrc-460x290-460x290.jpg"
           },
         ]
     }
+    this.selectedItem = [];
+    this.nonSelect = null;
   };
+
+  handleProductSelect = (id, state) => {
+    if(!state)
+      this.selectedItem.push(id);
+    else{
+      for(var i = 0; i < this.selectedItem.length; i++) {
+        if(this.selectedItem[i] === id)
+          this.selectedItem.splice(i, 1);
+      }
+    }
+    localStorage.setItem('assignedItem', JSON.stringify(this.selectedItem));
+  }
 
   render() {
     return(
@@ -86,7 +100,7 @@ class AssignProducts extends Component {
 
             <div className="custom-dropdown__scroll-container">
               {this.state.all_products.map((product, i) =>
-                <BtnListItem product={product} key={i}/>
+                <BtnListItem product={product} key={i} onClick={this.handleProductSelect}/>
               )}
             </div>
           </div>
@@ -98,7 +112,7 @@ class AssignProducts extends Component {
 
             <div className="custom-dropdown__scroll-container">
               {this.state.assigned_products.map((product, i) =>
-                <BtnListItem product={product} key={i}/>
+                <BtnListItem product={product} key={i} onClick={this.handleProductSelect}/>
               )}
             </div>
           </div>

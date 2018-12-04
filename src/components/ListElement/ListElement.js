@@ -10,20 +10,23 @@ import ActionButtonGroup from "../ActionButtonGroup/ActionButtonGroup";
 import "./ListElement.css";
 
 class ListElement extends Component {
+
   constructor(props) {
     super(props);
-    
+
     this.state = {
-       assign_products_component: false,
-       assigned_products_component: false,
-       collection_component: false,
-       added_collection_item: false,
-       interactive_div: true,
-       unhealthy_state: true,
-       assign_btn_state: true,
-       collection_btn_state: true,
-       recommend_state: true
+      assign_products_component: false,
+      assigned_products_component: false,
+      collection_component: false,
+      added_collection_item: false,
+      interactive_div: true,
+      unhealthy_state: true,
+      assign_btn_state: true,
+      collection_btn_state: true,
+      recommend_state: true
     }
+
+    this.elected_product_items = [];
   };
 
   componentWillMount() {
@@ -87,7 +90,7 @@ class ListElement extends Component {
             </h3>
           </div>
 
-          <div className="col-md-10">
+          <div className="col-md-12">
             <div className="row special-indicators__content content_bar">
               <div className="col-md-3 cus_checkbox">
                 <div className="cus-check_div">
@@ -110,8 +113,7 @@ class ListElement extends Component {
 
               <div className="col-md-6">
                 <div className="row font-size_caption">
-                  Everybody good? Plenty of slaves for my robot colony? - Interstellar Everybody good? Plenty of slaves for my robot colony? - Interstellar
-                  Everybody good? Plenty of slaves for my robot colony? - InterstellarEverybody good? Plenty of slaves for my robot Everybody good? Plenty of slaves for my robot colony? - Interstellar
+                  Autumn colours #instagood #followme #instago #fun #my #nice #love #me #cute #follow #photooftheday #like #tbt #beautiful #picoftheday #happy #summer #instadaily #igers #fun #bestoftheday #instamood #instalike #like4like #friends truncated text after three lines of…
                 </div>
 
                 <div className="row cus-interactive_bar">
