@@ -1,12 +1,18 @@
 import React, { Component } from "react";
+import BtnCollected from "../Buttons/BtnCollected/BtnCollected";
 
 class AddedCollection extends Component {
+  constructor(props){
+    super(props);
+    this.collectedItem = JSON.parse(localStorage.getItem('collectedItem'));
+  }
   render() {
     return (
       <ul className="select1-selection__rendered cus-collection-bar-ul">
         <li className="cus-choice_label">Collections:</li>
-        <li className="special-indicators__item_default select2-selection__choice" title="Item #1" data-select2-id="6"><span className="select2-selection__choice__remove" role="presentation">×</span>B&W dresses</li>
-        <li className="special-indicators__item_default select2-selection__choice" title="Item #2" data-select2-id="7"><span className="select2-selection__choice__remove" role="presentation">×</span>Umbrellas</li>
+        {this.collectedItem.map((item, i) =>
+          <BtnCollected collected={item} key={i} />
+        )}
       </ul>
     );
   }

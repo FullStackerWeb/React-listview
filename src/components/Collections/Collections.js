@@ -36,6 +36,20 @@ class Collections extends Component {
         },
       ]
     }
+    this.collectedItem = [];
+  }
+
+  handleClick = (collectionData, state) => {
+    if(state)
+      this.collectedItem.push(collectionData);
+    else{
+      this.collectedItem.forEach((element, index) => {
+        if(element.id == collectionData.id)
+          this.collectedItem.splice(index, 1);
+      });
+    }
+
+    localStorage.setItem('collectedItem', JSON.stringify(this.collectedItem));
   }
 
   render() {
@@ -50,7 +64,7 @@ class Collections extends Component {
 
         <div className="custom-dropdown__scroll-container">
           {this.state.collection_filters.map((collection, i) => 
-            <BtnCollection collection={collection} key={i}/>
+            <BtnCollection collection={collection} onClick={this.handleClick} key={i}/>
           )}
         </div>
         

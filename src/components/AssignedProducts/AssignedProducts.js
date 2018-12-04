@@ -17,31 +17,31 @@ class AssignedProducts extends Component {
           {
             "id":1,
             "title":"Bengal",
-            "tooltip": "Balinese",
+            "tooltip": "Bengal",
             "img_url":"https://cdn3-www.cattime.com/assets/uploads/2011/12/file_2706_bengal-cat-breed-picture.jpg"
           },
           {
             "id":2,
             "title":"Birman",
-            "tooltip": "Balinese",
+            "tooltip": "Birman",
             "img_url":"https://cdn1-www.cattime.com/assets/uploads/2011/12/file_2708_birman-460x290-460x290.jpg"
           },
           {
             "id":3,
             "title":"Bombay",
-            "tooltip": "Balinese",
+            "tooltip": "Bombay",
             "img_url":"https://cdn3-www.cattime.com/assets/uploads/2011/12/file_2756_Bombay-cat-breed.jpg"
           },
           {
             "id":4,
             "title":"British Shorthair",
-            "tooltip": "Balinese",
+            "tooltip": "Shorthair",
             "img_url":"https://cdn1-www.cattime.com/assets/uploads/2011/12/file_2744_british-shorthair-460x290-460x290.jpg"
           },
           {
             "id":5,
             "title":"Burmese",
-            "tooltip": "Balinese",
+            "tooltip": "Burmese",
             "img_url":"https://cdn1-www.cattime.com/assets/uploads/2011/12/file_2688_burmese-cat-breed-picture.jpg"
           },
           {
@@ -53,31 +53,31 @@ class AssignedProducts extends Component {
           {
             "id": 7,
             "title": "Chartreux",
-            "tooltip": "Balinese",
+            "tooltip": "Chartreux",
             "img_url": "https://cdn1-www.cattime.com/assets/uploads/2011/12/file_2718_chartreux-460x290-460x290.jpg"
           },
           {
             "id": 8,
-            "title": "Chinese Li Hua",
-            "tooltip": "Balinese",
+            "title": "Chinese Li...",
+            "tooltip": "Li Hua",
             "img_url": "https://cdn3-www.cattime.com/assets/uploads/2011/12/file_2758_chinese-li-460x290-460x290.jpg"
           },
           {
             "id": 9,
             "title": "Colorpoint Shorthair",
-            "tooltip": "Balinese",
+            "tooltip": "Shorthair",
             "img_url": "https://cdn2-www.cattime.com/assets/uploads/2011/12/file_2732_colorpoint-shorthair-460x290-460x290.jpg"
           },
           {
             "id": 10,
             "title": "Cornish Rex",
-            "tooltip": "Balinese",
+            "tooltip": "Cornish",
             "img_url": "https://cdn1-www.cattime.com/assets/uploads/2011/12/file_2696_cornish-rex-460x290-460x290.jpg"
           },
           {
             "id": 11,
             "title": "Cymric",
-            "tooltip": "Balinese",
+            "tooltip": "Cymric",
             "img_url": "https://cdn2-www.cattime.com/assets/uploads/2011/12/file_2690_cymrc-460x290-460x290.jpg"
           },
         ]        
