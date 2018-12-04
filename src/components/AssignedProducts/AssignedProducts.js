@@ -95,7 +95,7 @@ class AssignedProducts extends Component {
   }
 
   render() {
-    const {products_list, selectedProducts} = this.state;
+    const {products_list} = this.state;
     return(
       <div className="row cus_custom-dropdown__footer">
         <div className="cus-assign_div"></div>

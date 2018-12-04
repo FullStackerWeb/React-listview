@@ -19,15 +19,27 @@ class ActionButtonGroup extends Component {
   }
 
   click_approve() {
-    this.setState(prevState => ({
-      approved_state: !prevState.approved_state
-    }));
+    if(this.state.rejected_state)
+      this.setState(prevState => ({
+        approved_state: !prevState.approved_state,
+        rejected_state: !prevState.rejected_state
+      }));
+    else
+      this.setState(prevState => ({
+        approved_state: !prevState.approved_state
+      }));
   }
 
   click_reject(){
-    this.setState(prevState => ({
-      rejected_state: !prevState.rejected_state
-    }));
+    if(this.state.approved_state)
+      this.setState(prevState => ({
+        approved_state: !prevState.approved_state,
+        rejected_state: !prevState.rejected_state
+      }));
+    else
+      this.setState(prevState => ({
+        rejected_state: !prevState.rejected_state
+      }));
   }
 
   click_media(){
@@ -57,7 +69,7 @@ class ActionButtonGroup extends Component {
         </li>
         <li onClick={()=>this.click_media()} className={media_state ? normal_state + active_css + media_css : normal_state + default_css}>
           <span className="icon__copyright mr-2"></span>
-          <span className="text-nowrapw">Get media rights</span>
+          <span className="text-nowrapw">{!media_state?"Get media rights":"Got media rights"}</span>
         </li>
         <li onClick={()=>this.click_sticky()} className={sticky_state ? normal_state + active_css + sticky_css : normal_state + default_css}>
           <span className="icon__pin mr-2"></span>

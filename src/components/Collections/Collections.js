@@ -44,7 +44,7 @@ class Collections extends Component {
       this.collectedItem.push(collectionData);
     else{
       this.collectedItem.forEach((element, index) => {
-        if(element.id == collectionData.id)
+        if(element.id === collectionData.id)
           this.collectedItem.splice(index, 1);
       });
     }
