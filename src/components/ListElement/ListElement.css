@@ -135,4 +135,6 @@
     position: absolute;
     bottom: 10%;
 }
-  
+.cus-photo_description{
+    font-weight: normal;
+}

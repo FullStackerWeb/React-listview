@@ -58,24 +58,26 @@ class ActionButtonGroup extends Component {
     const {approve_css, default_css, normal_state, reject_css, media_css, sticky_css, approved_state, active_css, rejected_state,
       media_state, sticky_state} = this.state;
     return (
-      <ul className="special-indicators__list d-flex flex-column flex-grow-1">
-        <li onClick={()=>this.click_approve()} className={approved_state ? normal_state + active_css + approve_css : normal_state + default_css}>
-          <span className="icon__check-big mr-2"></span>
-          <span>Approved</span>
-        </li>
-        <li onClick={()=>this.click_reject()} className={rejected_state ? normal_state + active_css + reject_css : normal_state + default_css}>
-          <span className="icon__cross-close mr-2"></span>
-          <span>Reject</span>
-        </li>
-        <li onClick={()=>this.click_media()} className={media_state ? normal_state + active_css + media_css : normal_state + default_css}>
-          <span className="icon__copyright mr-2"></span>
-          <span className="text-nowrapw">{!media_state?"Get media rights":"Got media rights"}</span>
-        </li>
-        <li onClick={()=>this.click_sticky()} className={sticky_state ? normal_state + active_css + sticky_css : normal_state + default_css}>
-          <span className="icon__pin mr-2"></span>
-          <span className="text-nowrapw">Set sticky</span>
-        </li>
-      </ul>
+      <div className="col-md-2 offset-md-1 cus_function_div">
+        <ul className="special-indicators__list d-flex flex-column flex-grow-1">
+          <li onClick={()=>this.click_approve()} className={approved_state ? normal_state + active_css + approve_css : normal_state + default_css}>
+            <span className="icon__check-big mr-2"></span>
+            <span>Approved</span>
+          </li>
+          <li onClick={()=>this.click_reject()} className={rejected_state ? normal_state + active_css + reject_css : normal_state + default_css}>
+            <span className="icon__cross-close mr-2"></span>
+            <span>Reject</span>
+          </li>
+          <li onClick={()=>this.click_media()} className={media_state ? normal_state + active_css + media_css : normal_state + default_css}>
+            <span className="icon__copyright mr-2"></span>
+            <span className="text-nowrapw">{!media_state?"Get media rights":"Got media rights"}</span>
+          </li>
+          <li onClick={()=>this.click_sticky()} className={sticky_state ? normal_state + active_css + sticky_css : normal_state + default_css}>
+            <span className="icon__pin mr-2"></span>
+            <span className="text-nowrapw">Set sticky</span>
+          </li>
+        </ul>
+      </div>
     );
   }
 }

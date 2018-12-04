@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import NormalActive     from "../NormalActive/NormalActive";
+import PhotoSection     from "../PhotoSection/PhotoSection";
+import PhotoDescript    from "../PhotoDescript/PhotoDescript"
 import Collections      from '../Collections/Collections';
 import Interactive      from '../Interactive/Interactive';
 import ReactTooltip     from 'react-tooltip';
@@ -92,57 +95,11 @@ class ListElement extends Component {
 
           <div className="col-md-12">
             <div className="row special-indicators__content content_bar">
-              <div className="col-md-3 cus_checkbox">
-                <div className="cus-check_div">
-                  <input type="checkbox" className="checkbox__input"></input>
-                </div>
-                <div className="cus-img_div">
-                  <img className="cus_image special-indicators__item_default " src="img/girl.png" alt="logo"/>
-                  <div className="cus-img_middle rounded">
-                    <div className="cus-img_text">Show details</div>
-                  </div>
-                  {/* recommend part :: recommend_state is variable for check this photo is recommending  */}
-                  {recommend_state &&
-                    <div className="cus-recommend_icon">
-                      <span className="icon__star cus_star_icon"></span>
-                    </div>
-                  }
-                </div>
-              </div>
-
+              <PhotoSection />
               <div className="col-md-6">
-                <div className="row font-size_caption">
-                  Autumn colours #instagood #followme #instago #fun #my #nice #love #me #cute #follow #photooftheday #like #tbt #beautiful #picoftheday #happy #summer #instadaily #igers #fun #bestoftheday #instamood #instalike #like4like #friends truncated text after three lines of…
-                </div>
-
-                <div className="row cus-interactive_bar">
-                  {this.state.interactive_div && <Interactive /> }
-                </div>
-
-                <div className="row cus-interactive_bar">
-                  <ul className="cus-special-indicators__list cus-collection-bar-ul d-flex flex-grow-1">
-                    <li className="special-indicators__item_default d-flex align-items-center mr-4">    
-                      <span className="icon__social-instagram mr-1"></span>
-                      <span className="font-size_caption">gabriel.alexandru17</span>
-                    </li>
-                    <li className="special-indicators__item_default d-flex align-items-center mr-4">    
-                      <span className="icon__likes mr-1"></span>
-                      <span className="font-size_caption">30</span>
-                    </li>
-                    <li className="special-indicators__item_default d-flex align-items-center mr-4">    
-                      <span className="icon__comments mr-1"></span>
-                      <span className="font-size_caption">3</span>
-                    </li>
-                    {/* <li className="special-indicators__item_default d-flex align-items-center mr-4">    
-                      <span className="icon__user mr-1"></span>
-                      <span className="font-size_caption">120</span>
-                    </li> */}
-                    <li className="special-indicators__item_default d-flex align-items-center mr-4">    
-                      <span className="icon__calendar mr-1"></span>
-                      <span className="font-size_caption">20-08-2017, 4:08 pm</span>
-                    </li>
-                  </ul>
-                </div>
+                <PhotoDescript />
+                {this.state.interactive_div && <Interactive /> }
+                <NormalActive />
 
                 <div className="row cus-interactive_bar font-size_caption">
                   { this.state.added_collection_item && <AddedCollection /> }
@@ -174,19 +131,12 @@ class ListElement extends Component {
                   { this.state.unhealthy_state && <BtnUnhealthy /> }
                 </div>
               </div>
-
-              <div className="col-md-1"></div>
-
-              <div className="col-md-2 cus_function_div">
-                <ActionButtonGroup />
-              </div>
-
+              <ActionButtonGroup />
             </div>
 
             { assigned_products_component && <AssignedProducts /> } 
           </div>
         </div>
-
         <ReactTooltip />
       </div>
     );
