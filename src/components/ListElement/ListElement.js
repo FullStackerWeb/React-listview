@@ -94,8 +94,8 @@ class ListElement extends Component {
             </h3>
           </div>
 
-          <div className="col-md-10 special-indicators__content">
-            <div className="row content_bar">
+          <div className="col-md-10">
+            <div className="row special-indicators__content content_bar">
               <PhotoSection />
               <div className="col-md-6">
                 <PhotoDescript />
