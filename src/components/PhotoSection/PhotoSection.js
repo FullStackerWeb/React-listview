@@ -10,7 +10,7 @@ class PhotoSection extends Component {
         </div>
         <div className="cus-img_div">
           <img className="cus_image special-indicators__item_default " src="img/girl.png" alt="logo"/>
-          <div className="cus-img_middle rounded">
+          <div className="cus-img_middle rounded special-indicators__item_default">
             <div className="cus-img_text">Show details</div>
           </div>
           {recommend_state &&

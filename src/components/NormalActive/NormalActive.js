@@ -5,10 +5,12 @@ class NormalActive extends Component {
     return (
       <div className="row cus-interactive_bar">
         <ul className="cus-special-indicators__list d-flex flex-grow-1">
-          <li className="special-indicators__item_default cus-normal_active_ul d-flex align-items-center mr-4">
-            <span className="icon__social-instagram mr-1"></span>
-            <span className="cus-font-size_caption">gabriel.alexandru17</span>
-          </li>
+          <a className="" href="https://www.instagram.com/p/Bq20cFDnpCB/">
+            <li className="special-indicators__item_default cus-normal_active_ul align-items-center d-flex mr-4">
+              <span className="icon__social-instagram mr-1"></span>
+              <span className="cus-font-size_caption">Cats</span>
+            </li>
+          </a>
           <li className="special-indicators__item_default cus-normal_active_ul d-flex align-items-center mr-4">    
             <span className="icon__likes mr-1"></span>
             <span className="cus-font-size_caption">30</span>
