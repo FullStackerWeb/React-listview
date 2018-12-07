@@ -142,5 +142,4 @@ class ListElement extends Component {
     );
   }
 }
-
 export default ListElement;
